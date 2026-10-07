@@ -1,4 +1,5 @@
-const apiBaseUrl = (import.meta.env.VITE_API_URL || '').replace(/\/+$/, '')
+const defaultApiUrl = 'https://blogsapp-web-sahajanand-xkvb.vercel.app'
+const apiBaseUrl = (import.meta.env.VITE_API_URL || defaultApiUrl).replace(/\/+$/, '')
 
 export async function apiRequest(path, { token, ...options } = {}) {
   const headers = new Headers(options.headers || {})

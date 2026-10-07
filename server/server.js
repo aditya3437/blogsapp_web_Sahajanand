@@ -5,7 +5,8 @@ const express = require("express");
 const connectDB = require("./config/db");
 
 const app = express();
-const configuredOrigins = (process.env.CLIENT_ORIGIN || "http://localhost:5173")
+const defaultOrigins = "http://localhost:5173,https://blogsapp-web-sahajanand.vercel.app";
+const configuredOrigins = (process.env.CLIENT_ORIGIN || defaultOrigins)
   .split(",")
   .map((origin) => origin.trim())
   .filter(Boolean);

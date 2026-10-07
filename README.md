@@ -30,7 +30,7 @@ Open the Vite URL shown in the terminal (normally `http://localhost:5173`, or `5
 
 ## Deploy the frontend to Vercel
 
-Create a Vercel project with `client/client` as its root directory. Vercel can use the default Vite build settings (`npm run build`, output directory `dist`). Set the `VITE_API_URL` environment variable to the origin of the deployed API (for example, `https://your-api.example.com`, without a trailing slash), then redeploy the frontend. The API server must also allow the Vercel site origin through its `CLIENT_ORIGIN` setting. Without `VITE_API_URL`, the frontend uses `/api`, which is served locally by the Vite development proxy.
+Create a Vercel project with `client/client` as its root directory. Vercel can use the default Vite build settings (`npm run build`, output directory `dist`). The frontend defaults to the deployed API at `https://blogsapp-web-sahajanand-xkvb.vercel.app`; set `VITE_API_URL` in Vercel only if you want to use a different API origin, then redeploy the frontend. The API server allows `https://blogsapp-web-sahajanand.vercel.app` by default. If you configure `CLIENT_ORIGIN` on the API, include the frontend origin (multiple comma-separated origins are supported). Without `VITE_API_URL`, local development still uses the Vite proxy for `/api`.
 
 ## First administrator
 
