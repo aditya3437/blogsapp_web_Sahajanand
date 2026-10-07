@@ -28,6 +28,10 @@ A React and Express blog with member registration/login, public story reading, a
 
 Open the Vite URL shown in the terminal (normally `http://localhost:5173`, or `5174` if 5173 is busy). The browser keeps using that frontend URL for `/api` requests; Vite proxies them to the API on port 5000. For a separately hosted frontend, set `CLIENT_ORIGIN` to its origin (multiple comma-separated origins are supported).
 
+## Deploy the frontend to Vercel
+
+Create a Vercel project with `client/client` as its root directory. Vercel can use the default Vite build settings (`npm run build`, output directory `dist`). Set the `VITE_API_URL` environment variable to the origin of the deployed API (for example, `https://your-api.example.com`, without a trailing slash), then redeploy the frontend. The API server must also allow the Vercel site origin through its `CLIENT_ORIGIN` setting. Without `VITE_API_URL`, the frontend uses `/api`, which is served locally by the Vite development proxy.
+
 ## First administrator
 
 Register an account through the site, then promote that account directly in MongoDB using `mongosh`:
